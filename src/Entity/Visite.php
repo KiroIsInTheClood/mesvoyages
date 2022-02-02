@@ -47,6 +47,11 @@ class Visite
      */
     private $tempmax;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $pays;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,6 +125,18 @@ class Visite
     public function setTempmax(?int $tempmax): self
     {
         $this->tempmax = $tempmax;
+
+        return $this;
+    }
+
+    public function getPays(): ?string
+    {
+        return $this->pays;
+    }
+
+    public function setPays(string $pays): self
+    {
+        $this->pays = $pays;
 
         return $this;
     }
