@@ -22,6 +22,6 @@ class AcceuilControlleur {
      * @return Response
      */
     public function index() : Response{
-        return new Response("Hello world!");
+        return new Response("Hello world");
     }
 }
