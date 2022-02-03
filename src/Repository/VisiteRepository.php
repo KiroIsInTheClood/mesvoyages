@@ -84,4 +84,17 @@ class VisiteRepository extends ServiceEntityRepository
                     ->getResult();            
         }
     }
+    
+    /**
+     * Retourne les x dernieres visites les plus récentes
+     * @param int $number
+     * @return array
+     */
+    public function findAllLast(int $number):array{
+        return $this->createQueryBuilder('v')
+            ->orderBy('v.datecreation', "DESC")
+            ->setMaxResults($number)
+            ->getQuery()
+            ->getResult();
+    }
 }

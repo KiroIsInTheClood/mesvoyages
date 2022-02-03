@@ -13,7 +13,7 @@
             <h5 class="mt-3 mb-3">t° entre {{ visite.tempmin }}° et {{ visite.tempmax }}°</h5>
             <strong class="mt-3">Environnements :</strong>
             {% if visite.environnements is empty %}
-                Aucun
+                Non renseigné.
             {% else %}
                 {% for environnement in visite.environnements %}
                     {{ environnement.nom }}
@@ -25,10 +25,10 @@
             <!-- emplacement photo -->
             {% if visite.imagename %}
                 <img src="{{ app.request.getBasePath()~vich_uploader_asset(visite, 'imageFile') }}"
-                     class="card-img-top" style="with:100%;height:auto;">
+                     class="card-img-top" style="width:80%;height:auto;">
             {% else %}
                 <img src="{{ app.request.getBasePath()~"/images/visites/photo.png" }}"
-                     class="card-img-top" style="with:100%;height:auto;">
+                     class="card-img-top" style="width:80%;height:auto;">
             {% endif %}
         </div>
     </div>
