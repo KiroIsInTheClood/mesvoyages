@@ -35,7 +35,7 @@ class ContactController extends AbstractController {
         if($formContact->isSubmitted() && $formContact->isValid()){
             // envoi du mail
             $this->envoiMail($mailer, $contact);
-            $this->addFlash('succes', 'message envoyé');
+            $this->addFlash('Succès', 'essage envoyé');
             return $this->redirectToRoute('contact');
         }
         return $this->render("pages/contact.html.twig", [
